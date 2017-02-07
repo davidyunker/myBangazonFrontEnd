@@ -23,12 +23,14 @@ app.controller("ToDoCtrl", function ($scope, $location, ApiCallFactory, $routePa
     $scope.loadAllToDos = function () {
         console.log("loadAllToDos has started!")
         ApiCallFactory.getToDos()
-          .then(function (data) {
+          .then(function(data) {
               console.log("it worked!")
               console.log("data", data);
               $scope.ToDoInfo = data
           })
     }
+
+          
 
     $scope.getOneToDo = function () {
         console.log("getOneToDo is running")
@@ -40,11 +42,11 @@ app.controller("ToDoCtrl", function ($scope, $location, ApiCallFactory, $routePa
 
     }
 
-    TaskFactory.getSingleTask($routeParams.userTaskId)
-      .then((task) => {
-          console.log("task", task);
-          $scope.task = task;
-      });
+    //TaskFactory.getSingleTask($routeParams.userTaskId)
+    //  .then((task) => {
+    //      console.log("task", task);
+    //      $scope.task = task;
+    //  });
 
     $scope.AddNewToDo = function () {
         console.log("AddNewToDo has started")
