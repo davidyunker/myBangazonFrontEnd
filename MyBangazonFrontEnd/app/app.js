@@ -7,16 +7,22 @@ var app = angular.module("TaskTrackerAPI", ["ngRoute"]);
 app.config(function ($routeProvider) {
     $routeProvider.
         when("/newtask", {
-            templateUrl: "partials/newtask.html",
+            templateUrl: "app/Partials/newTask.html",
             controller: "ToDoCtrl"
         }).
          when("/tasks", {
-             templateUrl: "partials/tasks.html",
+             templateUrl: "app/Partials/tasks.html",
              controller: 'ToDoCtrl'
          }).
         when("/task", {
-            templateUrl: "partials/task.html",
+            templateUrl: "app/Partials/task.html",
             controller: 'ToDoCtrl'
+        }).
+
+        when("/edittask/:id", {
+            templateUrl: "app/Partials/edit-task.html",
+            controller: 'ToDoCtrl',
+
         }).
 
         otherwise("/")
